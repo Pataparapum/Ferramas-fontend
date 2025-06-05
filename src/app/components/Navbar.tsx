@@ -1,8 +1,11 @@
 import Image from "next/image"
-import { Menu } from "@deemlol/next-icons";
+import { Menu as IconMenu } from "@deemlol/next-icons";
 import { Search } from "@deemlol/next-icons";
 import { ShoppingCart } from "@deemlol/next-icons";
 import { User } from "@deemlol/next-icons";
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+
+
 
 export default function Navbar() {
     return (
@@ -18,7 +21,7 @@ export default function Navbar() {
             </div>
             <div id="menu" className="w-40 ">
                 <button className="w-30 ml-auto cursor-pointer flex items-center justify-between m-auto">
-                    <Menu className="text-zinc-200" size={50}  />
+                    <IconMenu className="text-zinc-200" size={50}  />
                     <h1 className=" text-zinc-200 text-2xl">Menú</h1>
                 </button>
                 
@@ -32,8 +35,8 @@ export default function Navbar() {
                             placeholder="buscar" 
                             className="w-150 h-10  p-3 rounded-l-full focus:outline-none "
                        />
-                    <div className=" bg-browPrimary rounded-full w-10">
-                        <Search className="h-10 text-backgroundColor m-auto" size={30}/>
+                    <div className="rounded-full w-10">
+                        <Search className="h-10 m-auto" size={30}/>
                     </div>
                 </div>
             </div>
