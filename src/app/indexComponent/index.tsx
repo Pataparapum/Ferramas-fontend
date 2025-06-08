@@ -1,10 +1,12 @@
 import Carrusel from "./componentes/carrusel";
+import Bento from "./componentes/bento";
+import ProductosDestacados from "./componentes/productosDestacados";
 
 export default function Index() {
-    return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24 bg-backgroundColor">
-        <Carrusel />
-      </main>
-    );
+    return (<>
+      <Carrusel />
+      <Bento />
+      <ProductosDestacados />
+    </>);
   }
   

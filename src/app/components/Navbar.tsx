@@ -3,9 +3,6 @@ import { Menu as IconMenu } from "@deemlol/next-icons";
 import { Search } from "@deemlol/next-icons";
 import { ShoppingCart } from "@deemlol/next-icons";
 import { User } from "@deemlol/next-icons";
-import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
-
-
 
 export default function Navbar() {
     return (
