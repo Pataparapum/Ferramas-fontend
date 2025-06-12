@@ -71,7 +71,7 @@ const CardPubliVertical = (props:any) => {
 export default function Bento() {
     return (
 
-        <div className="grid grid-cols-4 grid-rows-3 gap-3 justify-items-center m-auto w-full h-full p-20 ">
+        <div className="grid grid-cols-4 grid-rows-3 gap-3 justify-items-center m-auto w-[1400px] h-full p-20 bg-backgroundColor rounded-2xl">
             
              <div id="publi-1" className="col-span-3 w-full h-40 bg-bluePrimary-200 rounded-2xl">
                 <CardPubliHorizontal />
