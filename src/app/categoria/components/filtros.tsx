@@ -1,6 +1,7 @@
 'use client'
 import { Card, CardBody} from "@heroui/card";
 import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, Button} from "@heroui/react";
+import {Pagination, PaginationItem, PaginationCursor} from "@heroui/react";
 import React from "react";
 import { ChevronDown } from "@deemlol/next-icons";
 import { ChevronUp } from "@deemlol/next-icons";
@@ -38,12 +39,12 @@ export default function Filtros() {
     return (
         <Card className="w-[1100px]">
             <CardBody>
-                <div className="bg-backgroundColor rounded-2xl p-11" >
+                <div className="bg-backgroundColor rounded-2xl p-11 flex justify-between items-center" >
                     <div id="ordenarPor" className="flex w-[250px] flex-wrap flex-col md:flex-nowrap">
                         <div >
                             <span className="text-zinc-400">Ordenar Por</span>
                         </div>
-                          <Dropdown onOpenChange={(isOpen) => {setSelectedUpDown(isOpen)} }>
+                          <Dropdown onOpenChange={(isOpen) => {setSelectedUpDown(isOpen)}  }>
                             <DropdownTrigger>
                                     <Button className="flex justify-between text-start p-0 border-b-2" variant="bordered" color="default">     
                                         {selectedValue}
@@ -73,6 +74,15 @@ export default function Filtros() {
                             </DropdownMenu>
                         </Dropdown>
                                                 
+                    </div>
+
+                    <div>
+                        <Pagination showControls showShadow variant="flat" initialPage={1} total={1} size="md"  classNames={{
+                            wrapper:"gap 0 overflow-visible h-8 rounded border-divider",
+                            item:"w-8 h-8 text-small bg-transparent",
+                            cursor: "bg-gradient-to-b shadow-lg from-default-500 to-default-800 dark:from-default-300 dark:to-default-100 text-white font-bold",
+                            next:"p-3",
+                        }}/>
                     </div>
                 </div>
             </CardBody>

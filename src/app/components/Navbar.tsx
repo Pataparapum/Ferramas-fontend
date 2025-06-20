@@ -1,10 +1,23 @@
+'use client'
 import Image from "next/image"
 import { Menu as IconMenu } from "@deemlol/next-icons";
 import { Search } from "@deemlol/next-icons";
 import { ShoppingCart } from "@deemlol/next-icons";
 import { User } from "@deemlol/next-icons";
+import { useLocalStorage } from "../services/localStorage";
+import carritoDtos from "../categoria/components/dts/carritoDtos";
+import productosDTOs from "../categoria/components/dts/productoDts";
 
 export default function Navbar() {
+
+    let listaCarrito:carritoDtos[] = []
+
+    const [items] = useLocalStorage('carrito', listaCarrito);
+
+    const handleShowItems = () => {
+        alert(items.map((producto:productosDTOs) => "codigo: " + producto.codigo_producto + " nombre: " + producto.nombre))
+        console.log(items)
+    }
     return (
         <nav className="w-full h-30 bg-bluePrimary-200 flex flex-row justify-normal items-center p-2">
             <div id="logo" className="h-30  w-30 p-2">
@@ -41,7 +54,7 @@ export default function Navbar() {
             <div className="w-0.5 h-20 bg-zinc-200"></div>
 
             <div id="carrito" className="w-30"> 
-                <ShoppingCart className="text-zinc-200 hover:text-zinc-100 ml-10" size={50} />
+                <ShoppingCart className="text-zinc-200 hover:text-zinc-100 ml-10" size={50} onClick={handleShowItems} />
             </div>
             <div id="usuario" className="w-30">
                 <User className="text-zinc-200 hover:text-zinc-100 ml-10" size={50} />
